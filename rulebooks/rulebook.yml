@@ -7,11 +7,7 @@
         kind: ServiceAccount
         namespace: test-cm
   rules:
-    - name: Set facts
-      condition: event.type == "ADDED"
-      action:
-        set_fact:
-          event_data: {{ event }}
+   
     
     - name: Notify
       condition: event.type == "ADDED"
