@@ -13,3 +13,7 @@
         run_job_template:
           name: "Show SA token"
           organization: "Infrastructure"
+          job_args:
+            extra_vars:
+              namespace: "{{ ansible_eda.event.resource.metadata.namespace }}"
+              sa_name: "{{ ansible_eda.event.resource.metadata.name }}"
