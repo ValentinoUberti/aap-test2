@@ -21,5 +21,8 @@
           post_events: true
           var_root: resource
           job_args:
+            extra_vars:
+              namespace: "{{ event_data }}"
+              
             
              
