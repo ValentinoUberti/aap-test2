@@ -7,6 +7,11 @@
         kind: ServiceAccount
         namespace: test-cm
   rules:
+    - name: Set facts
+      condition: event.type == "ADDED"
+      action:
+        set_fact:
+          event_data: {{ event }}
     - name: Notify
       condition: event.type == "ADDED"
       action:
@@ -15,4 +20,6 @@
           organization: "Infrastructure"
           post_events: true
           var_root: resource
+          job_args:
+            
              
