@@ -12,6 +12,7 @@
       action:
         set_fact:
           event_data: {{ event }}
+    
     - name: Notify
       condition: event.type == "ADDED"
       action:
