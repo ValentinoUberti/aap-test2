@@ -15,5 +15,5 @@
           organization: "Infrastructure"
           job_args:
             extra_vars:
-              namespace: "{{ event.resource.metadata.namespace }}"
-              sa_name: "{{ event.resource.metadata.name }}"
+              namespace: event.resource.metadata.namespace
+              sa_name: event.resource.metadata.name
